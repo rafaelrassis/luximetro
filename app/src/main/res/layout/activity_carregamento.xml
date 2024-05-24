@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".carregamento">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/currentValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Current Value:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/maxValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/currentValueTextView"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"
+            android:text="Max Value:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/minValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/maxValueTextView"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"
+            android:text="Min Value:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/avgValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/minValueTextView"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"
+            android:text="Average Value:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/ambienteTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/avgValueTextView"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"
+            android:text="Ambiente:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/idadeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ambienteTextView"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"
+            android:text="Idade:"
+            android:textSize="16sp" />
+
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/avgValueTextView"
+            android:layout_marginTop="110dp"
+            android:text="iniciar" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
