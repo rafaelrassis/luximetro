@@ -138,7 +138,7 @@ public class Carregamento extends AppCompatActivity implements SensorEventListen
         lightValue = event.values[0]; // Armazenando o valor atual do sensor
 
         // Update current value
-        currentValueTextView.setText("Current Value: " + lightValue);
+        currentValueTextView.setText(lightValue + " lx");
 
         // Update max, min, and sum values
         if (lightValue > maxValue) {

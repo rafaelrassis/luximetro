@@ -19,6 +19,9 @@
         android:theme="@style/Theme.Luximetro"
         tools:targetApi="31">
         <activity
+            android:name=".carregamento_medir"
+            android:exported="false" />
+        <activity
             android:name=".resultado"
             android:exported="false" />
         <activity
