@@ -7,4 +7,66 @@
     android:layout_height="match_parent"
     tools:context=".carregamento_medir">
 
+    <!-- Valor atual é destacado -->
+    <TextView
+        android:id="@+id/currentValueMediaTextView"
+        android:layout_width="418dp"
+        android:layout_height="165dp"
+        android:layout_marginTop="90dp"
+        android:background="@android:color/holo_blue_light"
+        android:gravity="center"
+        android:padding="6dp"
+        android:text="lx"
+        android:textColor="@android:color/white"
+        android:textSize="38sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Valores máximos, mínimos e médios são menores e abaixo do valor atual -->
+    <TextView
+        android:id="@+id/maxValueMediaTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#83BCD1"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Valor Máximo:"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/currentValueMediaTextView" />
+
+    <TextView
+        android:id="@+id/minValueMediaTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#82BBD0"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Valor Mínimo:"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/maxValueMediaTextView" />
+
+    <TextView
+        android:id="@+id/avgValueMediaTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#81BACF"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Valor Médio:"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/minValueMediaTextView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

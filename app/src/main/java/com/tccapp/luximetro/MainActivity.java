@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -17,6 +18,7 @@ import com.google.android.material.slider.Slider;
 public class MainActivity extends AppCompatActivity {
     Button botaoCozinha, botaoSala, botaoQuarto, botaoEscritorio, botaoMedir;
     float sliderValue;
+    TextView selected_value_textview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +38,19 @@ public class MainActivity extends AppCompatActivity {
         botaoEscritorio = findViewById(R.id.button_escritorio);
         botaoMedir = findViewById(R.id.button_medir);
 
+        selected_value_textview = findViewById(R.id.selected_value_textview);
         Slider slider = findViewById(R.id.slider);
         slider.addOnChangeListener(new Slider.OnChangeListener() {
             @Override
             public void onValueChange(Slider sliderComponent, float value, boolean fromUser) {
+
+
+                if (value == (int) value) {
+                    // Atualiza o texto do TextView com o número inteiro selecionado
+                    selected_value_textview.setText(String.valueOf((int) value) + " Anos");
+
+                }
+
                 // Atualiza o valor do slider
                 sliderValue = value;
             }
@@ -48,37 +59,61 @@ public class MainActivity extends AppCompatActivity {
         botaoCozinha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                abrirAtividade("cozinha");
+
+                int idadeInt = (int) sliderValue;
+                if (idadeInt == 0) {
+                    Toast.makeText(MainActivity.this, "Adicione uma idade", Toast.LENGTH_SHORT).show();
+                } else {
+                    abrirAtividade("Cozinha");
+                }
+
             }
         });
 
         botaoSala.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                abrirAtividade("sala");
+                int idadeInt = (int) sliderValue;
+                if (idadeInt == 0) {
+                    Toast.makeText(MainActivity.this, "Adicione uma idade", Toast.LENGTH_SHORT).show();
+                } else {
+                    abrirAtividade("Sala");
+                }
             }
         });
 
         botaoQuarto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                abrirAtividade("quarto");
+                int idadeInt = (int) sliderValue;
+                if (idadeInt == 0) {
+                    Toast.makeText(MainActivity.this, "Adicione uma idade", Toast.LENGTH_SHORT).show();
+                } else {
+                    abrirAtividade("Quarto");
+                }
             }
         });
 
         botaoEscritorio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                abrirAtividade("escritorio");
+                int idadeInt = (int) sliderValue;
+                if (idadeInt == 0) {
+                    Toast.makeText(MainActivity.this, "Adicione uma idade", Toast.LENGTH_SHORT).show();
+                } else {
+                    abrirAtividade("Escritorio");
+                }
             }
         });
 
         botaoMedir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Aqui você pode adicionar o código para ação do botão "Medir" se necessário
-                // Neste exemplo, não há nenhuma ação específica definida
-                Toast.makeText(MainActivity.this, "Botão 'Medir' clicado", Toast.LENGTH_SHORT).show();
+                // Aqui você pode adicionar o código para enviar os dados para a tela de carregamento
+                // Por exemplo, você pode criar um Intent para a tela de carregamento e adicionar os dados necessários como extras
+                Intent intent = new Intent(MainActivity.this, carregamento_medir.class);
+                intent.putExtra("idade", String.valueOf((int) sliderValue)); // Adiciona a idade selecionada como extra
+                startActivity(intent); // Inicia a atividade de carregamento
             }
         });
     }
@@ -95,4 +130,7 @@ public class MainActivity extends AppCompatActivity {
         // Inicia a atividade de carregamento
         startActivity(it);
     }
+
+
+
 }

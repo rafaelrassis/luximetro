@@ -35,17 +35,17 @@
     <!-- Valor atual é destacado -->
     <TextView
         android:id="@+id/currentValueTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="377dp"
+        android:layout_height="161dp"
         android:layout_marginTop="32dp"
         android:background="@android:color/holo_blue_light"
-        android:text="lx"
-        android:textSize="24sp"
-        android:textColor="@android:color/white"
-        android:padding="16dp"
         android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
+        android:padding="38dp"
+        android:text="lx"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/idadeTextView" />
 
     <!-- Valores máximos, mínimos e médios são menores e abaixo do valor atual -->
@@ -53,7 +53,7 @@
         android:id="@+id/maxValueTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Valor Máximo:"
+        android:text=""
         android:textSize="14sp"
         android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@id/currentValueTextView"
@@ -64,7 +64,7 @@
         android:id="@+id/minValueTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Valor Mínimo:"
+        android:text=""
         android:textSize="14sp"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@id/maxValueTextView"
@@ -75,24 +75,41 @@
         android:id="@+id/avgValueTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Valor Médio:"
+        android:text=""
         android:textSize="14sp"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@id/minValueTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Aviso acima do botão -->
+    <TextView
+        android:id="@+id/instructionTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#78CAE8"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Por favor, posicione o smartphone com a tela virada para cima e não o mexa até que o processamento esteja completo."
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avgValueTextView" />
+
     <!-- Botão com ícone de play -->
     <Button
         android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Iniciar"
+        android:layout_marginTop="16dp"
         android:drawableLeft="@android:drawable/ic_media_play"
-        android:layout_marginTop="24dp"
         android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/avgValueTextView"
+        android:text="Iniciar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/instructionTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
