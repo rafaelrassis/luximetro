@@ -16,10 +16,10 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.slider.Slider;
 
 public class MainActivity extends AppCompatActivity {
-    Button botaoCozinha, botaoSala, botaoQuarto, botaoEscritorio, botaoMedir;
+    Button botaoCozinha, botaoSala, botaoQuarto, botaoEscritorio, botaoMedir, botaoDuvidas;
     float sliderValue;
     TextView selected_value_textview;
-
+    private static final int REQUEST_CODE_RESULTADO = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
         botaoQuarto = findViewById(R.id.button_quarto);
         botaoEscritorio = findViewById(R.id.button_escritorio);
         botaoMedir = findViewById(R.id.button_medir);
+        botaoDuvidas = findViewById(R.id.button_duvida);
+
+        String idade = getIntent().getStringExtra("idade");
+
+
+
 
         selected_value_textview = findViewById(R.id.selected_value_textview);
         Slider slider = findViewById(R.id.slider);
@@ -44,29 +50,35 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onValueChange(Slider sliderComponent, float value, boolean fromUser) {
 
-
-                if (value == (int) value) {
-                    // Atualiza o texto do TextView com o número inteiro selecionado
-                    selected_value_textview.setText(String.valueOf((int) value) + " Anos");
-
-                }
-
+                // Atualiza o texto do TextView com o valor selecionado
+                selected_value_textview.setText(String.format("%.0f Anos", value));
                 // Atualiza o valor do slider
                 sliderValue = value;
             }
         });
 
+
+        // Se o valor de idade não for nulo ou vazio, defina-o no Slider
+        if (idade != null && !idade.isEmpty()) {
+            try {
+                float idadeFloat = Float.parseFloat(idade);
+                slider.setValue(idadeFloat);
+            } catch (NumberFormatException e) {
+                // Trate a exceção caso o valor de idade não possa ser convertido para float
+                Toast.makeText(this, "Idade inválida recebida", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+
         botaoCozinha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 int idadeInt = (int) sliderValue;
                 if (idadeInt == 0) {
                     Toast.makeText(MainActivity.this, "Adicione uma idade", Toast.LENGTH_SHORT).show();
                 } else {
                     abrirAtividade("Cozinha");
                 }
-
             }
         });
 
@@ -116,6 +128,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent); // Inicia a atividade de carregamento
             }
         });
+
+        botaoDuvidas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, duvidas.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void abrirAtividade(String local) {
@@ -130,7 +150,6 @@ public class MainActivity extends AppCompatActivity {
         // Inicia a atividade de carregamento
         startActivity(it);
     }
-
 
 
 }

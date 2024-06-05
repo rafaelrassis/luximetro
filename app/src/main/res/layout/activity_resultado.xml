@@ -34,26 +34,6 @@
             android:layout_marginEnd="16dp"/>
 
         <TextView
-            android:id="@+id/minValueTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mínimo:"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"/>
-
-        <TextView
-            android:id="@+id/maxValueTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Máximo:"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"/>
-
-        <TextView
             android:id="@+id/avgValueTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -44,7 +45,7 @@ public class Carregamento extends AppCompatActivity implements SensorEventListen
             idadeTextView = findViewById(R.id.idadeTextView);
 
 
-            ambienteTextView.setText("Local: " + ambiente);
+            ambienteTextView.setText("Ambiente: " + ambiente);
             idadeTextView.setText("Idade: " + idade);
 
 
@@ -73,7 +74,7 @@ public class Carregamento extends AppCompatActivity implements SensorEventListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carregamento);
-
+        try {
 
 // Retrieve environment and age from MainActivity
         Intent intent = getIntent();
@@ -85,7 +86,7 @@ public class Carregamento extends AppCompatActivity implements SensorEventListen
         idadeTextView = findViewById(R.id.idadeTextView);
 
 
-        ambienteTextView.setText("Local: " + ambiente);
+        ambienteTextView.setText("Ambiente: " + ambiente);
         idadeTextView.setText("Idade: " + idade);
 
 
@@ -114,9 +115,19 @@ public class Carregamento extends AppCompatActivity implements SensorEventListen
             avgValueTextView.setText("No light sensor found");
             startButton.setEnabled(false); // Desabilita o botão se não houver sensor de luz
         }
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Lidar com a exceção aqui, por exemplo, exibir uma mensagem de erro para o usuário
+            Toast.makeText(getApplicationContext(), "Erro! .", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(this, erroapp.class);
+            startActivity(intent);
+        }
+
     }
 
     private void startMeasurement() {
+        try {
         // Reset values
         maxValue = Float.MIN_VALUE;
         minValue = Float.MAX_VALUE;
@@ -131,10 +142,19 @@ public class Carregamento extends AppCompatActivity implements SensorEventListen
 
         // Disable start button to prevent multiple measurements
         startButton.setEnabled(false);
+    } catch (Exception e) {
+        e.printStackTrace();
+        // Lidar com a exceção aqui, por exemplo, exibir uma mensagem de erro para o usuário
+        Toast.makeText(getApplicationContext(), "Erro! .", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(this, erroapp.class);
+        startActivity(intent);
+    }
     }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
+        try {
         lightValue = event.values[0]; // Armazenando o valor atual do sensor
 
         // Update current value
@@ -149,10 +169,20 @@ public class Carregamento extends AppCompatActivity implements SensorEventListen
         }
         sumValue += lightValue;
         count++;
+    } catch (Exception e) {
+        e.printStackTrace();
+        // Lidar com a exceção aqui, por exemplo, exibir uma mensagem de erro para o usuário
+        Toast.makeText(getApplicationContext(), "Erro! .", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(this, erroapp.class);
+        startActivity(intent);
+    }
     }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
         // Not used
     }
+
+
 }

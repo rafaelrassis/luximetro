@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">luximetro</string>
     <string name="clique_aqui_profissional_linkedin"><a href="https://encurtador.com.br/6sgSO">Encontrar um profissional para te auxiliar</a></string>
+
+    <string name="lux_definition_title">O que é um lux?</string>
+
+    <string name="lux_definition">Lux é a unidade de medida de iluminância no Sistema Internacional de Unidades (SI). Em termos simples, iluminância se refere à quantidade de luz que incide sobre uma determinada área. Um lux é definido como um lúmen por metro quadrado (lm/m²).\n\n
+        Para entender melhor, o lúmen é uma unidade de medida de fluxo luminoso, que descreve a quantidade total de luz emitida por uma fonte de luz em todas as direções. A iluminância, medida em lux, considera essa quantidade de luz e a distribui sobre uma área específica.\n\n
+        Então, um lux representa a quantidade de luz visível que incide sobre um metro quadrado de superfície. Por exemplo, se uma sala está iluminada com 100 lux, significa que cada metro quadrado dessa sala recebe 100 lumens de luz. Essa medida é crucial em diversas áreas, como design de iluminação, engenharia elétrica e ergonomia, ajudando a garantir níveis adequados de iluminação para diferentes atividades e espaços.</string>
+
+    <string name="watt_definition_title">O que é um Watt?</string>
+
+    <string name="watt_definition">Um watt (símbolo: W) é a unidade de medida de potência no Sistema Internacional de Unidades (SI). Ele é usado para quantificar a taxa na qual a energia é transferida ou convertida. Formalmente, um watt é definido como um joule por segundo (J/s).\n\n
+        Em termos simples, o watt mede a quantidade de energia usada por segundo. Por exemplo, uma lâmpada de 60 watts consome energia a uma taxa de 60 joules por segundo. Da mesma forma, um dispositivo elétrico que consome 100 watts está usando 100 joules de energia por segundo.\n\n
+        O watt é uma medida importante em muitos contextos, como eletricidade, eletrônica, mecânica e termodinâmica. Ele é utilizado para descrever a potência de dispositivos elétricos, a capacidade de motores, a produção de energia em usinas elétricas e muitos outros aspectos relacionados à energia e suas transformações.</string>
+
 </resources>

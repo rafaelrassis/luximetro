@@ -12,7 +12,7 @@
         android:id="@+id/ambienteTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Ambiente:"
+        android:text="Ambiente: "
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"

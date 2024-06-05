@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/loadView"
         android:layout_width="0dp"
-        android:layout_height="149dp"
+        android:layout_height="126dp"
         app:srcCompat="@drawable/logo"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +34,7 @@
         android:id="@+id/age_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="2dp"
         android:layout_marginStart="16dp"
         android:text="Qual sua idade?"
         app:layout_constraintTop_toBottomOf="@id/horizontal_line"
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
         android:layout_marginEnd="22dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="2dp"
         android:valueFrom="10.0"
         android:valueTo="100.0"
         android:value="10.0"
@@ -154,6 +154,23 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_cozinha" />
+
+
+
+    <Button
+        android:id="@+id/button_duvida"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="2dp"
+        android:backgroundTint="#ECE9E9"
+        android:drawableLeft="@drawable/duvidas"
+        android:text="Dúvidas"
+        android:textColor="#5E4995"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_medir" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

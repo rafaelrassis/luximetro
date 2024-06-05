@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".duvidas">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <!-- TextView para exibir a definição de lux -->
+    <TextView
+        android:id="@+id/lux_definition_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lux_definition_title"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <TextView
+        android:id="@+id/lux_definition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lux_definition"
+        android:layout_below="@id/lux_definition_title"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <!-- TextView para exibir a definição de watt -->
+    <TextView
+        android:id="@+id/watt_definition_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/watt_definition_title"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@id/lux_definition"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <TextView
+        android:id="@+id/watt_definition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/watt_definition"
+        android:layout_below="@id/watt_definition_title"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    </LinearLayout>
+</ScrollView >
